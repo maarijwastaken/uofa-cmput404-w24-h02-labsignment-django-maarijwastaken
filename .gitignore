@@ -310,5 +310,5 @@ build/
 tests/report/
 tests/screenshots/
 
-/main.min.js
-/main.min.js.map
+main.min.js
+main.min.js.map
