@@ -309,3 +309,6 @@ tests/.coverage*
 build/
 tests/report/
 tests/screenshots/
+
+/main.min.js
+/main.min.js.map
