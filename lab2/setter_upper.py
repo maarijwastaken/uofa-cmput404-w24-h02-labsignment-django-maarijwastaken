@@ -4,7 +4,7 @@ import subprocess
 # Source: https://docs.python.org/3/library/os.html
 if not os.path.exists("venv"):
     # Create virtualenv
-    subprocess.run(["python", "-m", "venv", "venv"])
+    subprocess.run(["python3", "-m", "venv", "venv"])
     print("Virtualenv created!")
 
 # Activate virtualenv
@@ -21,11 +21,11 @@ if os.getenv("VIRTUAL_ENV") is None:
     print("Virtualenv activated!")
 
 
-subprocess.run(["pip", "install", "-r", "requirements.txt"])
+subprocess.run(["python3", "-m", "pip3", "install", "-r", "requirements.txt"])
 print("Django installed!")
 subprocess.run(["npm", "install"])
 print("npm packages installed!")
 subprocess.run(["npx", "esbuild", "main.js", "--bundle", "--minify", "--sourcemap", "--outfile=./emojis/static/main.min.js"])
 print("esbuild complete!")
-subprocess.run(["python", "manage.py", "runserver", "0.0.0.0:8000"])
+subprocess.run(["python3", "manage.py", "runserver", "0.0.0.0:8000"])
 print("Server running!")
