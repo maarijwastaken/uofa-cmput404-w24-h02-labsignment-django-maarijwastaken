@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-# Check if virtualenv exists
+# Source: https://docs.python.org/3/library/os.html
 if not os.path.exists("venv"):
     # Create virtualenv
     subprocess.run(["python", "-m", "venv", "venv"])
@@ -15,7 +15,8 @@ else:
     activate_script = os.path.join("venv", "bin", "activate")
     print("UNIX detected!")
 
-if not os.environ.get("VIRTUAL_ENV"):
+# Source: https://stackoverflow.com/questions/1871549/determine-if-python-is-running-inside-virtualenv and https://docs.python.org/3/library/os.html
+if os.getenv("VIRTUAL_ENV") is None:
     subprocess.run(["source", activate_script], shell=True)
     print("Virtualenv activated!")
 
