@@ -21,7 +21,7 @@ if os.getenv("VIRTUAL_ENV") is None:
     print("Virtualenv activated!")
 
 
-subprocess.run(["python3", "-m", "pip3", "install", "-r", "requirements.txt"])
+subprocess.run(["pip3", "install", "-r", "requirements.txt"])
 print("Django installed!")
 subprocess.run(["npm", "install"])
 print("npm packages installed!")
